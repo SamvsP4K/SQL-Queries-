@@ -1,0 +1,15 @@
+Leetcode Question - https://leetcode.com/problems/customers-who-never-order/description/
+
+Question:
+
+Write an SQL query to report all customers who never order anything.
+Return the result table in any order.
+
+Solution:
+
+SELECT c.name AS Customers
+FROM customers AS c
+WHERE c.id NOT IN 
+(
+    SELECT customerID FROM orders
+);
